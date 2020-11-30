@@ -1,0 +1,14 @@
+.footer {
+    background: #242a5f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-container{
+    min-width: 100px;
+    min-height: 100px;
+  }
+  .image{
+    width: 100px;
+    height: 100px;
+  }
