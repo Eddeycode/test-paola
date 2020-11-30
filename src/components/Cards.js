@@ -31,7 +31,7 @@ class Cards extends React.Component {
 
   render() {
 
-    if(this.state.requestFailed) return <Card><h1 className="loading">Error</h1></Card>
+    if(this.state.requestFailed) return <Card><h1 className="loading">Error...</h1></Card>
     if(!this.state.data) return <Card><h1 className="loading">Loading...</h1></Card>
 
     return (
@@ -45,7 +45,7 @@ class Cards extends React.Component {
             {this.state.data.results[0].name.first} {this.state.data.results[0].name.last}
           </Typography>
           <Typography color="textSecondary" className="space">
-            Developer
+            Developer 
           </Typography>
           <Typography className="spc" variant="body2" component ="p">
             <Moment format="MMM Do, YYYY">{this.state.data.results[0].dob.date}</Moment>
