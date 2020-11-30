@@ -4,8 +4,9 @@ import CardMedia from '@material-ui/core/CardMedia'
 import CardContent from '@material-ui/core/CardContent'
 import axios from 'axios';
 import './Cards.css';
-import Maps from './Map'
+import Maps, { MapContainer } from './Map';
 import { Typography } from '@material-ui/core';
+import Moment from 'react-moment';
 
 class Cards extends React.Component {
   constructor(props) {
@@ -31,9 +32,13 @@ class Cards extends React.Component {
   render() {
 
     if(this.state.requestFailed) return <p>Request failed.</p>
-    if(!this.state.data) return <p>Loading</p>
+    if(!this.state.data) return <h1>LOADING BOS</h1>
 
     return (
+      <>
+      <div>
+        <img className="profil" src={this.state.data.results[0].picture.large}></img>
+      </div>
       <Card className="root" variant="outlined">
         <CardContent>
           <Typography variant="h5" component="h2">
@@ -43,8 +48,8 @@ class Cards extends React.Component {
             Developer
           </Typography>
           <Typography className="spc" variant="body2" component ="p">
-            {this.state.data.results[0].dob.date}
-          </Typography>
+            <Moment format="MMM Do, YYYY">{this.state.data.results[0].dob.date}</Moment>
+          </Typography> 
           <Typography className="spc" variant="body2" component ="p">
             {this.state.data.results[0].phone}
           </Typography>
@@ -53,12 +58,12 @@ class Cards extends React.Component {
           </Typography>
           <Typography className="spc" variant="body2" component ="p">
             {this.state.data.results[0].location.street.name} {this.state.data.results[0].location.street.number}, {this.state.data.results[0].location.city}, {this.state.data.results[0].location.state}, {this.state.data.results[0].location.country}
+            <Maps classname="spc"/>
           </Typography>
-          <CardMedia><Maps/></CardMedia>
-            
+          
         </CardContent>
       </Card>
-
+      </>
     );
   }
 }
