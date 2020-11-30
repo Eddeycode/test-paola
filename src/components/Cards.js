@@ -33,31 +33,38 @@ class Cards extends React.Component {
 
     if(this.state.requestFailed) return <Card><h1 className="loading">Error...</h1></Card>
     if(!this.state.data) return <Card><h1 className="loading">Loading...</h1></Card>
-
+    let Image = [this.state.data.results[0].picture.large];
+    let Name = [this.state.data.results[0].name.first," ",this.state.data.results[0].name.last];
+    let dob = [this.state.data.results[0].dob.date];
+    let phone = [this.state.data.results[0].phone];
+    let email = [this.state.data.results[0].email];
+    let address = [this.state.data.results[0].location.street.name," ", this.state.data.results[0].location.street.number," ", this.state.data.results[0].location.city, this.state.data.results[0].location.state, this.state.data.results[0].location.country]
+    let lat= [parseFloat(this.state.data.results[0].location.coordinates.latitude)];
+    let lng= [parseFloat(this.state.data.results[0].location.coordinates.longitude)];
     return (
       <>
       <div>
-        <img className="profil" src={this.state.data.results[0].picture.large}></img>
+        <img className="profil" src={Image}></img>
       </div>
       <Card className="root" variant="outlined">
         <CardContent>
           <Typography variant="h5" component="h2">
-            {this.state.data.results[0].name.first} {this.state.data.results[0].name.last}
+           {Name}
           </Typography>
           <Typography color="textSecondary" className="space">
             Developer 
           </Typography>
           <Typography className="spc" variant="body2" component ="p">
-            <Moment format="MMM Do, YYYY">{this.state.data.results[0].dob.date}</Moment>
+            <Moment format="MMM Do, YYYY">{dob}</Moment>
           </Typography> 
           <Typography className="spc" variant="body2" component ="p">
-            {this.state.data.results[0].phone}
+            {phone}
           </Typography>
           <Typography className="spc" variant="body2" component ="p">
-            {this.state.data.results[0].email}
+            {email}
           </Typography>
           <Typography className="spc" variant="body2" component ="p">
-            {this.state.data.results[0].location.street.name} {this.state.data.results[0].location.street.number}, {this.state.data.results[0].location.city}, {this.state.data.results[0].location.state}, {this.state.data.results[0].location.country}
+            {address}
             <div classname="spc"></div>
             <Maps/>
           </Typography>

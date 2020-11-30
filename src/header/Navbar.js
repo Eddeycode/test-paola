@@ -1,37 +1,38 @@
-import React, { useState } from 'react';
+import React, { Component, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Cards from '../components/Cards';
 import './Navbar.css';
 
-function Navbar() {
-  const [click, setClick] = useState(0);
-  const handleClick = () => setClick(!click);
-  const closeMenu = () => setClick(false);
+
+class Navbar extends Cards {
+
+  render(){
   return (
     <div>
       <>
       <nav className="navbar">
         <div className="navbar-container">
             <div className='navbar-logo'>
-              <h1>Sarah</h1>
+              <h4>Paola.id</h4>
             </div>  
           <ul className= "nav-menu">
             <li className='nav-item'>
-              <Link to='/about' className='nav-links' onClick={closeMenu}>
+              <Link to='/about' className='nav-links'>
                 About
               </Link>
             </li>
             <li className='nav-item'>
-              <Link to='/resume' className='nav-links' onClick={closeMenu}>
+              <Link to='/resume' className='nav-links'>
                 Resume
               </Link>
             </li>
             <li className='nav-item'>
-              <Link to='/education' className='nav-links' onClick={closeMenu}>
+              <Link to='/education' className='nav-links'>
                 Education
               </Link>
             </li>
             <li className='nav-item'>
-              <Link to='/portofolio' className='nav-links' onClick={closeMenu}>
+              <Link to='/portofolio' className='nav-links'>
                 Portofolio
               </Link>
             </li>
@@ -41,6 +42,7 @@ function Navbar() {
     </>
     </div>
   )
+  }
 }
 
 export default Navbar;
