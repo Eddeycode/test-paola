@@ -1,0 +1,16 @@
+.web-container {
+  background: url('../images/bg.png') center center/cover no-repeat;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
+}
+
+.image{
+  height: 400px;
+  width: 400px;
+}
