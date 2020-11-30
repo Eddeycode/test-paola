@@ -1,6 +1,6 @@
 .root{
-    min-height: 400px;
-    min-width: 400px;
+    min-height: 300px;
+    min-width: 300px;
 }
 .bullet{
     display: inline-block;
@@ -18,4 +18,9 @@
 .spc{
     padding-top: 6px;
     padding-bottom: 6px;
+}
+
+.map{
+    width: 100px;
+    height: 100px;
 }

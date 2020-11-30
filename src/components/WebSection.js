@@ -6,7 +6,7 @@ import Profile from './Profile';
 function WebSection() {
     return (
         <div className="web-container">
-            <Profile />
+            <Profile/>
             <Cards/>
         </div>
     )

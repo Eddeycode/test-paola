@@ -4,6 +4,7 @@ import CardMedia from '@material-ui/core/CardMedia'
 import CardContent from '@material-ui/core/CardContent'
 import axios from 'axios';
 import './Cards.css';
+import Maps from './Map'
 import { Typography } from '@material-ui/core';
 
 class Cards extends React.Component {
@@ -53,9 +54,8 @@ class Cards extends React.Component {
           <Typography className="spc" variant="body2" component ="p">
             {this.state.data.results[0].location.street.name} {this.state.data.results[0].location.street.number}, {this.state.data.results[0].location.city}, {this.state.data.results[0].location.state}, {this.state.data.results[0].location.country}
           </Typography>
-          <Typography className="spc" variant="body2" component ="p">
-            GPS
-          </Typography>
+          <CardMedia><Maps/></CardMedia>
+            
         </CardContent>
       </Card>
 
