@@ -1,5 +1,6 @@
 .root{
-    min-width: 275px;
+    min-height: 400px;
+    min-width: 400px;
 }
 .bullet{
     display: inline-block;
@@ -12,4 +13,9 @@
 
 .space{
     padding-bottom: 12px;
+}
+
+.spc{
+    padding-top: 6px;
+    padding-bottom: 6px;
 }
