@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '@material-ui/core/card';
+import CardMedia from '@material-ui/core/CardMedia'
 import CardContent from '@material-ui/core/CardContent'
 import axios from 'axios';
 import './Cards.css';
@@ -25,7 +26,6 @@ class Cards extends React.Component {
       })
     })
   }
-
 
   render() {
 
@@ -58,6 +58,7 @@ class Cards extends React.Component {
           </Typography>
         </CardContent>
       </Card>
+
     );
   }
 }
